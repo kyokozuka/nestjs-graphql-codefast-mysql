@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+    mysql:
+        container_name: mariadb
+        image: mariadb
+        restart: always
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: sample
+            MYSQL_USER: user
+            MYSQL_PASSWORD: password
+            TZ: 'Asia/Tokyo'
+        ports:
+            - '3306:3306'

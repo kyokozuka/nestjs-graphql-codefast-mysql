@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Book {
+  id: ID!
+  title: String!
+  author: String!
+  price: Int!
+  createdAt: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  getbooks: [Book!]!
+  book(id: Int!): Book!
+}
+
+type Mutation {
+  updateBook(updateBook: UpdateBookInput!): Book!
+  addBook(newBook: NewBookInput!): Book!
+  removeBook(id: Int!): Boolean!
+}
+
+input UpdateBookInput {
+  id: ID!
+  title: String!
+  price: Int!
+  author: String!
+}
+
+input NewBookInput {
+  title: String!
+  price: Int!
+  author: String!
+}
